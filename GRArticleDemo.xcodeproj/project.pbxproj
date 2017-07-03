@@ -7,15 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		509AD5B41F05EE17005C75F3 /* arcticle326.html in Resources */ = {isa = PBXBuildFile; fileRef = 509AD5B31F05EE17005C75F3 /* arcticle326.html */; };
+		509AD5B61F05F00D005C75F3 /* News.css in Resources */ = {isa = PBXBuildFile; fileRef = 509AD5B51F05F00D005C75F3 /* News.css */; };
+		509AD5B91F062487005C75F3 /* UIHtmlContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 509AD5B81F062487005C75F3 /* UIHtmlContentTableViewCell.m */; };
+		509AD5BC1F062498005C75F3 /* UICommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 509AD5BB1F062498005C75F3 /* UICommentTableViewCell.m */; };
+		509AD5EC1F064D17005C75F3 /* GRNewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509AD5EB1F064D17005C75F3 /* GRNewDetailViewController.m */; };
+		509AD6511F0A3D5B005C75F3 /* GRUIWebHtmlContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 509AD6501F0A3D5B005C75F3 /* GRUIWebHtmlContentView.m */; };
 		50B0ED791F04F1F20090738F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B0ED781F04F1F20090738F /* main.m */; };
 		50B0ED7C1F04F1F20090738F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B0ED7B1F04F1F20090738F /* AppDelegate.m */; };
 		50B0ED7F1F04F1F20090738F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B0ED7E1F04F1F20090738F /* ViewController.m */; };
 		50B0ED821F04F1F20090738F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B0ED801F04F1F20090738F /* Main.storyboard */; };
 		50B0ED841F04F1F20090738F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B0ED831F04F1F20090738F /* Assets.xcassets */; };
 		50B0ED871F04F1F20090738F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B0ED851F04F1F20090738F /* LaunchScreen.storyboard */; };
+		50B0ED931F04F5020090738F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B0ED921F04F5020090738F /* WebKit.framework */; };
+		50B0ED971F04F8A00090738F /* GRHtmlContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B0ED961F04F8A00090738F /* GRHtmlContentView.m */; };
+		50B0ED9A1F04F8C60090738F /* GRWebHtmlContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B0ED991F04F8C60090738F /* GRWebHtmlContentView.m */; };
+		50B0ED9C1F04FE590090738F /* test_local.html in Resources */ = {isa = PBXBuildFile; fileRef = 50B0ED9B1F04FE590090738F /* test_local.html */; };
+		A35AAA5BEEE1E9B779951A8A /* libPods-GRArticleDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 337398238B5F0164DE427448 /* libPods-GRArticleDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EBC38035DE04E33F57CCE76 /* Pods-GRArticleDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRArticleDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRArticleDemo/Pods-GRArticleDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		10B1806963D4BAE60FE1E9B4 /* Pods-GRArticleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRArticleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GRArticleDemo/Pods-GRArticleDemo.release.xcconfig"; sourceTree = "<group>"; };
+		337398238B5F0164DE427448 /* libPods-GRArticleDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GRArticleDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		509AD5B31F05EE17005C75F3 /* arcticle326.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = arcticle326.html; sourceTree = "<group>"; };
+		509AD5B51F05F00D005C75F3 /* News.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = News.css; sourceTree = "<group>"; };
+		509AD5B71F062487005C75F3 /* UIHtmlContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHtmlContentTableViewCell.h; sourceTree = "<group>"; };
+		509AD5B81F062487005C75F3 /* UIHtmlContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHtmlContentTableViewCell.m; sourceTree = "<group>"; };
+		509AD5BA1F062498005C75F3 /* UICommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICommentTableViewCell.h; sourceTree = "<group>"; };
+		509AD5BB1F062498005C75F3 /* UICommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICommentTableViewCell.m; sourceTree = "<group>"; };
+		509AD5EA1F064D17005C75F3 /* GRNewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRNewDetailViewController.h; sourceTree = "<group>"; };
+		509AD5EB1F064D17005C75F3 /* GRNewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRNewDetailViewController.m; sourceTree = "<group>"; };
+		509AD64F1F0A3D5B005C75F3 /* GRUIWebHtmlContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRUIWebHtmlContentView.h; sourceTree = "<group>"; };
+		509AD6501F0A3D5B005C75F3 /* GRUIWebHtmlContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRUIWebHtmlContentView.m; sourceTree = "<group>"; };
 		50B0ED741F04F1F20090738F /* GRArticleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRArticleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B0ED781F04F1F20090738F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50B0ED7A1F04F1F20090738F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +50,12 @@
 		50B0ED831F04F1F20090738F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B0ED861F04F1F20090738F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50B0ED881F04F1F20090738F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B0ED921F04F5020090738F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		50B0ED951F04F8A00090738F /* GRHtmlContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRHtmlContentView.h; sourceTree = "<group>"; };
+		50B0ED961F04F8A00090738F /* GRHtmlContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRHtmlContentView.m; sourceTree = "<group>"; };
+		50B0ED981F04F8C60090738F /* GRWebHtmlContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRWebHtmlContentView.h; sourceTree = "<group>"; };
+		50B0ED991F04F8C60090738F /* GRWebHtmlContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRWebHtmlContentView.m; sourceTree = "<group>"; };
+		50B0ED9B1F04FE590090738F /* test_local.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test_local.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B0ED931F04F5020090738F /* WebKit.framework in Frameworks */,
+				A35AAA5BEEE1E9B779951A8A /* libPods-GRArticleDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D95234A288BF48777BECF34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EBC38035DE04E33F57CCE76 /* Pods-GRArticleDemo.debug.xcconfig */,
+				10B1806963D4BAE60FE1E9B4 /* Pods-GRArticleDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		509AD5EE1F09E750005C75F3 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 		50B0ED6B1F04F1F20090738F = {
 			isa = PBXGroup;
 			children = (
 				50B0ED761F04F1F20090738F /* GRArticleDemo */,
 				50B0ED751F04F1F20090738F /* Products */,
+				50B0ED911F04F5020090738F /* Frameworks */,
+				4D95234A288BF48777BECF34 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +108,11 @@
 		50B0ED761F04F1F20090738F /* GRArticleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				509AD5EE1F09E750005C75F3 /* Vendor */,
+				509AD5B51F05F00D005C75F3 /* News.css */,
+				509AD5B31F05EE17005C75F3 /* arcticle326.html */,
+				50B0ED9B1F04FE590090738F /* test_local.html */,
+				50B0ED941F04F8A00090738F /* HtmlContentView */,
 				50B0ED7A1F04F1F20090738F /* AppDelegate.h */,
 				50B0ED7B1F04F1F20090738F /* AppDelegate.m */,
 				50B0ED7D1F04F1F20090738F /* ViewController.h */,
@@ -67,6 +122,12 @@
 				50B0ED851F04F1F20090738F /* LaunchScreen.storyboard */,
 				50B0ED881F04F1F20090738F /* Info.plist */,
 				50B0ED771F04F1F20090738F /* Supporting Files */,
+				509AD5B71F062487005C75F3 /* UIHtmlContentTableViewCell.h */,
+				509AD5B81F062487005C75F3 /* UIHtmlContentTableViewCell.m */,
+				509AD5BA1F062498005C75F3 /* UICommentTableViewCell.h */,
+				509AD5BB1F062498005C75F3 /* UICommentTableViewCell.m */,
+				509AD5EA1F064D17005C75F3 /* GRNewDetailViewController.h */,
+				509AD5EB1F064D17005C75F3 /* GRNewDetailViewController.m */,
 			);
 			path = GRArticleDemo;
 			sourceTree = "<group>";
@@ -79,6 +140,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		50B0ED911F04F5020090738F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B0ED921F04F5020090738F /* WebKit.framework */,
+				337398238B5F0164DE427448 /* libPods-GRArticleDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50B0ED941F04F8A00090738F /* HtmlContentView */ = {
+			isa = PBXGroup;
+			children = (
+				50B0ED951F04F8A00090738F /* GRHtmlContentView.h */,
+				50B0ED961F04F8A00090738F /* GRHtmlContentView.m */,
+				50B0ED981F04F8C60090738F /* GRWebHtmlContentView.h */,
+				50B0ED991F04F8C60090738F /* GRWebHtmlContentView.m */,
+				509AD64F1F0A3D5B005C75F3 /* GRUIWebHtmlContentView.h */,
+				509AD6501F0A3D5B005C75F3 /* GRUIWebHtmlContentView.m */,
+			);
+			path = HtmlContentView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50B0ED8B1F04F1F20090738F /* Build configuration list for PBXNativeTarget "GRArticleDemo" */;
 			buildPhases = (
+				F126E0E76238DB070CF3D99D /* [CP] Check Pods Manifest.lock */,
 				50B0ED701F04F1F20090738F /* Sources */,
 				50B0ED711F04F1F20090738F /* Frameworks */,
 				50B0ED721F04F1F20090738F /* Resources */,
+				2ED2CE863091B4222D0B5F1E /* [CP] Embed Pods Frameworks */,
+				5A456E324BEB445B7A4F17F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,22 +224,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509AD5B61F05F00D005C75F3 /* News.css in Resources */,
+				50B0ED9C1F04FE590090738F /* test_local.html in Resources */,
 				50B0ED871F04F1F20090738F /* LaunchScreen.storyboard in Resources */,
 				50B0ED841F04F1F20090738F /* Assets.xcassets in Resources */,
+				509AD5B41F05EE17005C75F3 /* arcticle326.html in Resources */,
 				50B0ED821F04F1F20090738F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2ED2CE863091B4222D0B5F1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GRArticleDemo/Pods-GRArticleDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A456E324BEB445B7A4F17F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GRArticleDemo/Pods-GRArticleDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F126E0E76238DB070CF3D99D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50B0ED701F04F1F20090738F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509AD5B91F062487005C75F3 /* UIHtmlContentTableViewCell.m in Sources */,
 				50B0ED7F1F04F1F20090738F /* ViewController.m in Sources */,
 				50B0ED7C1F04F1F20090738F /* AppDelegate.m in Sources */,
+				509AD6511F0A3D5B005C75F3 /* GRUIWebHtmlContentView.m in Sources */,
+				509AD5EC1F064D17005C75F3 /* GRNewDetailViewController.m in Sources */,
+				50B0ED971F04F8A00090738F /* GRHtmlContentView.m in Sources */,
 				50B0ED791F04F1F20090738F /* main.m in Sources */,
+				50B0ED9A1F04F8C60090738F /* GRWebHtmlContentView.m in Sources */,
+				509AD5BC1F062498005C75F3 /* UICommentTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +414,7 @@
 		};
 		50B0ED8C1F04F1F20090738F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBC38035DE04E33F57CCE76 /* Pods-GRArticleDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LR2DH4466E;
@@ -283,6 +427,7 @@
 		};
 		50B0ED8D1F04F1F20090738F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10B1806963D4BAE60FE1E9B4 /* Pods-GRArticleDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LR2DH4466E;
@@ -312,6 +457,7 @@
 				50B0ED8D1F04F1F20090738F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

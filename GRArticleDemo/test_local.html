@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link href="assets/test.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h3>WKWebView - Loading local file, assets and css.</h3>
+    <img src="assets/pic.png" width="100" onClick="testJS()">
+    <p>
+    Local files and assets load correctly if baseUrl is set.
+    </p>
+    <p>
+    A ScriptMessageHandler "MyObserver" is added when the WKWebView is configured at start up.
+    The "Call Javascript" button calls the javascript function testJS() in this html file.
+    </p>
+    
+    <p>
+    window.webkit.messageHandlers.MyObserver.postMessage(message)
+    calls the Objective-C method: userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
+    and brings up a dialog with the passed message text.
+    </p>
+    
+    <script>
+        function testJS(){
+            var message = "Yo!"
+            window.webkit.messageHandlers.WKObserver.postMessage(message)
+            return "OK!"
+        }
+    </script>
+    
+</body>
+</html>
