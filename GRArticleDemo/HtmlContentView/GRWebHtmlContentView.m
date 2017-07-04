@@ -136,10 +136,8 @@ static NSString *const __GRObserverName = @"WKObserver";
             CGRect realFrame = [_webView convertRect:frame toView:self];
             [_webView evaluateJavaScript:@"getAllImageUrl();" completionHandler:^(id _Nullable stringData, NSError * _Nullable error) {
                 NSArray<NSString *> *imageList = [stringData componentsSeparatedByString:@","];
-                if (imageList.count > index) {
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(htmlContentVeiw:imageURLStrings:imageDidPressedAtIndex:frame:image:)]) {
-                        [self.delegate htmlContentVeiw:self imageURLStrings:imageList imageDidPressedAtIndex:index frame:realFrame image:nil];
-                    }
+                if (imageList.count > index && self.delegate && [self.delegate respondsToSelector:@selector(htmlContentVeiw:imageURLStrings:imageDidPressedAtIndex:frame:image:)]) {
+                    [self.delegate htmlContentVeiw:self imageURLStrings:imageList imageDidPressedAtIndex:index frame:realFrame image:nil];
                 }
             }];
         }

@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)htmlContentVeiw:(GRHtmlContentView *)htmlContentView heightDidChanged:(CGFloat)height;
-- (void)htmlContentVeiw:(GRHtmlContentView *)htmlContentView imageDidPressed:(NSString *)imageURLString;
 - (void)htmlContentVeiw:(GRHtmlContentView *)htmlContentView imageURLStrings:(NSArray<NSString *> *)imageURLStrings imageDidPressedAtIndex:(NSInteger)index frame:(CGRect)frame image:(nullable UIImage *)image;
 
 @end

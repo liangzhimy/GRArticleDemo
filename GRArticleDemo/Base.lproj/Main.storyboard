@@ -67,16 +67,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMH-ga-Mky" userLabel="inputBarContainerView">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zjb-mN-Bjv"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="U2p-m4-7aR" kind="embed" identifier="inputBarViewControllerSegue" id="3DB-NS-e2O"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ytm-1I-A9J" secondAttribute="bottom" id="0xq-UK-o0a"/>
+                            <constraint firstAttribute="bottom" secondItem="kMH-ga-Mky" secondAttribute="bottom" id="2Iv-po-ggA"/>
+                            <constraint firstAttribute="trailing" secondItem="kMH-ga-Mky" secondAttribute="trailing" id="3sv-3h-lh2"/>
                             <constraint firstAttribute="trailing" secondItem="ytm-1I-A9J" secondAttribute="trailing" id="5ni-Ff-mvO"/>
+                            <constraint firstItem="kMH-ga-Mky" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FkH-Vz-NNP"/>
                             <constraint firstItem="ytm-1I-A9J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MJA-0E-Zb2"/>
                             <constraint firstItem="ytm-1I-A9J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SCB-Z0-c5C"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="2Iv-po-ggA" id="JgB-vN-6Ob"/>
+                        <outlet property="inputBarHeightConstraint" destination="zjb-mN-Bjv" id="mwh-Vm-1WB"/>
                         <outlet property="tableView" destination="ytm-1I-A9J" id="cg2-Ao-ZXW"/>
                     </connections>
                 </viewController>
@@ -139,6 +153,114 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMa-t2-bvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="782" y="38"/>
+        </scene>
+        <!--Article Input Bar View Controller-->
+        <scene sceneID="w2D-er-5XL">
+            <objects>
+                <viewController id="U2p-m4-7aR" customClass="GRArticleInputBarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5An-t7-AWo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bor-L7-hxJ" userLabel="waitSendView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-de-TCv">
+                                        <rect key="frame" x="10" y="7" width="325" height="30"/>
+                                        <color key="backgroundColor" red="0.18145314161219395" green="0.38331482755471424" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Please input your comment">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputButtonPressed:" destination="U2p-m4-7aR" eventType="touchUpInside" id="DTg-Av-csJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2S-Zp-Jvw" userLabel="commentButton">
+                                        <rect key="frame" x="345" y="12" width="20" height="20"/>
+                                        <color key="backgroundColor" red="0.98911898667402298" green="1" blue="0.033501351025525983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="G1a-NN-4VS"/>
+                                            <constraint firstAttribute="width" constant="20" id="oAt-ca-9nA"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.87575630540000005" green="0.28981809860000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commentButtonPressed:" destination="U2p-m4-7aR" eventType="touchUpInside" id="jgz-Rq-ngy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.012865800947581718" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Egi-de-TCv" firstAttribute="centerY" secondItem="bor-L7-hxJ" secondAttribute="centerY" id="Xw0-rJ-WLU"/>
+                                    <constraint firstAttribute="trailing" secondItem="K2S-Zp-Jvw" secondAttribute="trailing" constant="10" id="cnE-V9-0bq"/>
+                                    <constraint firstItem="Egi-de-TCv" firstAttribute="leading" secondItem="bor-L7-hxJ" secondAttribute="leading" constant="10" id="hRp-Mc-QIo"/>
+                                    <constraint firstItem="K2S-Zp-Jvw" firstAttribute="leading" secondItem="Egi-de-TCv" secondAttribute="trailing" constant="10" id="qCB-jA-48D"/>
+                                    <constraint firstItem="K2S-Zp-Jvw" firstAttribute="centerY" secondItem="bor-L7-hxJ" secondAttribute="centerY" id="svB-aV-QFa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-sj-5ag" userLabel="inputView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYe-kj-uz4" userLabel="sendButton">
+                                        <rect key="frame" x="321" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0RV-rx-Uup"/>
+                                            <constraint firstAttribute="width" constant="46" id="o23-60-E6b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="U2p-m4-7aR" eventType="touchUpInside" id="xo7-rb-ZPR"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZYM-56-5wu" customClass="GRArticleInputTextView">
+                                        <rect key="frame" x="8" y="7" width="305" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SSU-KR-dij"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.31114475809999997" blue="0.40589256379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ZYM-56-5wu" secondAttribute="bottom" constant="7" id="4xM-zY-TIU"/>
+                                    <constraint firstItem="MYe-kj-uz4" firstAttribute="centerY" secondItem="ZYM-56-5wu" secondAttribute="centerY" id="JWO-qv-xxP"/>
+                                    <constraint firstAttribute="trailing" secondItem="MYe-kj-uz4" secondAttribute="trailing" constant="8" id="L5k-Hx-bxX"/>
+                                    <constraint firstItem="ZYM-56-5wu" firstAttribute="top" relation="lessThanOrEqual" secondItem="z1g-sj-5ag" secondAttribute="top" constant="7" id="V5X-ju-hiS"/>
+                                    <constraint firstItem="MYe-kj-uz4" firstAttribute="leading" secondItem="ZYM-56-5wu" secondAttribute="trailing" constant="8" id="jKs-ky-7Ee"/>
+                                    <constraint firstItem="ZYM-56-5wu" firstAttribute="leading" secondItem="z1g-sj-5ag" secondAttribute="leading" constant="8" id="siA-m8-hOF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bor-L7-hxJ" firstAttribute="leading" secondItem="5An-t7-AWo" secondAttribute="leading" id="2Fg-SD-kuc"/>
+                            <constraint firstAttribute="bottom" secondItem="bor-L7-hxJ" secondAttribute="bottom" id="AQL-JS-vbA"/>
+                            <constraint firstAttribute="trailing" secondItem="bor-L7-hxJ" secondAttribute="trailing" id="LJE-4G-jvj"/>
+                            <constraint firstItem="z1g-sj-5ag" firstAttribute="top" secondItem="5An-t7-AWo" secondAttribute="top" id="OiN-l0-UOO"/>
+                            <constraint firstItem="bor-L7-hxJ" firstAttribute="top" secondItem="5An-t7-AWo" secondAttribute="top" id="Qmc-d0-g1W"/>
+                            <constraint firstItem="z1g-sj-5ag" firstAttribute="leading" secondItem="5An-t7-AWo" secondAttribute="leading" id="Wlj-vB-nRk"/>
+                            <constraint firstAttribute="trailing" secondItem="z1g-sj-5ag" secondAttribute="trailing" id="Zf5-Wq-JWj"/>
+                            <constraint firstAttribute="bottom" secondItem="z1g-sj-5ag" secondAttribute="bottom" id="pbW-xP-err"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleInputTextView" destination="ZYM-56-5wu" id="zZS-IG-9fJ"/>
+                        <outlet property="commentButton" destination="K2S-Zp-Jvw" id="WeU-cT-cr6"/>
+                        <outlet property="inputTextViewBottomMarginConstraint" destination="4xM-zY-TIU" id="nsa-X7-ZIc"/>
+                        <outlet property="inputTextViewHeightConstraint" destination="SSU-KR-dij" id="h5m-P6-uZU"/>
+                        <outlet property="inputTextViewTopMarginConstraint" destination="V5X-ju-hiS" id="vwc-Ks-pLm"/>
+                        <outlet property="inputView" destination="z1g-sj-5ag" id="6cV-g1-5L9"/>
+                        <outlet property="sendButton" destination="MYe-kj-uz4" id="1kP-rj-fdA"/>
+                        <outlet property="waitSendView" destination="bor-L7-hxJ" id="r88-ML-hiZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5he-kr-it9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="512.74362818590714"/>
         </scene>
     </scenes>
 </document>

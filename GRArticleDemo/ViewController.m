@@ -12,14 +12,20 @@
 #import "UICommentTableViewCell.h"
 #import <IDMPhotoBrowser/IDMPhotoBrowser.h>
 #import <UIImageView+WebCache.h>
+#import "GRArticleInputBarViewController.h"
 
-@interface ViewController () <GRHtmlContentViewDelegate, UITableViewDelegate, UITableViewDataSource, IDMPhotoBrowserDelegate>
+static NSString *const __GRInputBarViewControllerSeque = @"inputBarViewControllerSegue";
+
+@interface ViewController () <GRHtmlContentViewDelegate, UITableViewDelegate, UITableViewDataSource, IDMPhotoBrowserDelegate, GRArticleInputBarViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *datas;
 @property (strong, nonatomic) NSArray<NSString *> *imageURLs;
 @property (weak, nonatomic) IBOutlet GRHtmlContentView *contentView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CGFloat htmlContentHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLayoutConstraint;
+@property (assign, nonatomic) GRArticleInputBarViewController *inputBarViewController;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *inputBarHeightConstraint;
 
 @end
 
@@ -39,6 +45,29 @@
 }
 
 - (void)__loadData {
+    [self __loadDataWithFile];
+} 
+
+- (void)__loadDataWithTestData {
+    NSArray<NSString *> *imageSrcs = @[ @"http://i.zeze.com/attachment/forum/201604/20/211107wk2dki4uz25u5d0i.jpg",
+                         @"http://pic.baike.soso.com/p/20140220/20140220203503-974903012.jpg" ];
+    
+    NSString *body = @"这里是测试<br> <!—IMG#0—> <br> 第二行 <!—IMG#1—>";
+    NSInteger i = 0;
+    for (NSString *imageSrc in imageSrcs) {
+        NSString *replaceString = [NSString stringWithFormat:@"<img src=\"%@\" alt=\"%@\" />", imageSrc, @""];
+        NSString *imageTag = [NSString stringWithFormat:@"<!—IMG#%ld—>", i];
+        i++;
+        body = [body stringByReplacingOccurrencesOfString:imageTag withString:replaceString options:NSCaseInsensitiveSearch range:NSMakeRange(0, body.length)];
+//        [body replaceOccurrencesOfString:@"" withString:replaceString options:NSCaseInsensitiveSearch range:NSMakeRange(0, body.length)];
+    }
+    NSString *html = [self __htmlWithHtmlBody:body];
+    self.datas = @[ html, @[ @"comment1", @"comment2", @"comment3" ] ];
+    [self.tableView reloadData];
+    self.imageURLs = [self __parseImageURLsWithHtml:html];
+} 
+
+- (void)__loadDataWithFile {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"arcticle326" ofType:@"html"];
     NSString *body = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     NSString *html = [self __htmlWithHtmlBody:body];
@@ -161,31 +190,31 @@
     return result;
 }
 
-- (void)htmlContentVeiw:(GRHtmlContentView *)htmlContentView imageDidPressed:(NSString *)imageURLString {
-    if (!imageURLString) {
-        return; 
-    }
-    
-    NSInteger index = [self.imageURLs indexOfObject:imageURLString];
-    if (index >= 0) {
-        NSMutableArray *photos = [NSMutableArray new];
-        for (NSString *urlString in self.imageURLs) {
-            IDMPhoto *photo = [IDMPhoto photoWithURL:[NSURL URLWithString:urlString]];
-            [photos addObject:photo];
-        }
-        
-        IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
-        [browser setInitialPageIndex:index];
-        browser.delegate = self;
-        browser.displayDoneButton = NO; 
-        browser.displayActionButton = NO;
-        browser.displayArrowButton = YES;
-        browser.displayCounterLabel = YES;
-        browser.usePopAnimation = YES;
-        browser.dismissOnTouch = NO;
-        [self presentViewController:browser animated:YES completion:nil];
-    } 
-}
+//- (void)htmlContentVeiw:(GRHtmlContentView *)htmlContentView imageDidPressed:(NSString *)imageURLString {
+//    if (!imageURLString) {
+//        return; 
+//    }
+//    
+//    NSInteger index = [self.imageURLs indexOfObject:imageURLString];
+//    if (index >= 0) {
+//        NSMutableArray *photos = [NSMutableArray new];
+//        for (NSString *urlString in self.imageURLs) {
+//            IDMPhoto *photo = [IDMPhoto photoWithURL:[NSURL URLWithString:urlString]];
+//            [photos addObject:photo];
+//        }
+//        
+//        IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+//        [browser setInitialPageIndex:index];
+//        browser.delegate = self;
+//        browser.displayDoneButton = NO; 
+//        browser.displayActionButton = NO;
+//        browser.displayArrowButton = YES;
+//        browser.displayCounterLabel = YES;
+//        browser.usePopAnimation = YES;
+//        browser.dismissOnTouch = NO;
+//        [self presentViewController:browser animated:YES completion:nil];
+//    } 
+//}
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -226,6 +255,28 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.contentView setNeedsLayout];
-} 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:__GRInputBarViewControllerSeque]) {
+        self.inputBarViewController = segue.destinationViewController;
+        self.inputBarViewController.delegate = self;
+    }
+}
+#pragma mark - GRArticleInputBarViewControllerDelegate
+- (void)articleInputBarViewController:(GRArticleInputBarViewController *)articleInputBarViewController didRaise:(BOOL)isRaise bottomHeight:(CGFloat)height {
+    if (fabs(self.bottomLayoutConstraint.constant - height) < 0) {
+        return; 
+    }
+    
+    [UIView animateWithDuration:1 animations:^{
+        self.bottomLayoutConstraint.constant = height;
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)articleInputBarViewController:(GRArticleInputBarViewController *)articleInputBarViewController didChangeHeight:(CGFloat)height {
+    self.inputBarHeightConstraint.constant = height;
+}
 
 @end
